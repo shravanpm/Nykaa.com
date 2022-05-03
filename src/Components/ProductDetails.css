@@ -1,0 +1,100 @@
+#main{
+    background-color: #f3f3f3;
+    padding: 20px 0px;
+}
+
+.flex {
+  display: flex;
+  
+}
+.container {
+  border: 1px solid #f3f3f3;
+  width: 85%;
+  margin: auto;
+  font-family: Inter, Roboto, Arial, sans-serif;
+  line-height: 30px;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#right{
+  border-left: 2px solid #eceef0;
+}
+#mainImage{
+    width: 70%;
+    padding: 10px 0px;
+}
+#imageDiv {
+  width: 35%;
+}
+#imageDiv+div{
+    width: 63%;
+}
+#details {
+  text-align: left;
+  width: 100%;
+  padding: 10px 0px 0px 20px;
+}
+#details > div > span {
+  margin-right: 10px;
+}
+#name {
+  font-size: 20px;
+  font-weight: 500;
+}
+#AddToBag {
+  width: 35%;
+  margin: 10% 5%;
+  height: 40px;
+}
+#AddToBag > button {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background-color: #fc2779;
+  border: none;
+}
+#pin {
+    padding: 7% 3%;
+  width: 60%;
+  padding-left: 20px;
+  border-left: 2px solid #eceef0;
+    height: 100%
+}
+.delivery {
+  font-weight: 500;
+}
+.location {
+  font-size: 22px;
+}
+#input {
+  color: #fc2779;
+  width: 80%;
+  /* height: 30px; */
+  font-weight: 600;
+  font-size: 14px;
+  border: 2px solid #eceef0;
+}
+input {
+  height: 100%;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  width: 82%;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#genuine{
+    background-color: #f3f4f6;
+    width: 100%;
+    padding-left: 24px;
+    margin-top: 10px;
+}
+#genuine>img{
+margin-right: 20px;
+margin-bottom: -10px;
+}
