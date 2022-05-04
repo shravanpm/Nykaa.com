@@ -1,0 +1,113 @@
+#signin-page {
+    background-color: #f3f3f3;
+    padding: 0.05em 0;
+}
+
+#signin-div {
+    margin: 1em auto;
+    padding: 1em;
+    width: 25vw;
+    background-color: white;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,.16);
+}
+
+#button-close-div {
+    /* color: transparent; */
+    text-align: left;
+    /* background-color: transparent; */
+    /* border: none */
+}
+
+#signin-div > h2 {
+    margin: 0.5em auto 0;
+    text-align: left;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: sans-serif;
+    /* margin-top: 56px;
+    margin-bottom: 9px; */
+    text-transform: none;
+    color: #000f1d;
+    opacity: .92;
+}
+
+.filler-text {
+    text-align: left;
+    font-size: 0.7em;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.015em;
+    color: #001325;
+    opacity: .92;
+    padding-bottom: 1em;
+}
+
+.filler-text:nth-of-type(1) {
+    border-bottom: 1px solid grey;
+}
+
+.signin-input {
+    margin: 0.5em auto;
+    width: 90%;
+    border: 1px solid #ebebeb;
+    text-align: center;
+    border-radius: 4px;
+    background: #fc2779;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: .28px;
+    padding: 8px 16px;
+}
+
+.signin-input::placeholder {
+    color: white;
+    letter-spacing: 0.02em;
+    font-size: 1.15em;
+}
+
+#gift-box {
+    /* width: 90%; */
+    height: 25vh;
+}
+
+.icon {
+    height: 20px;
+    padding-right: 0.5em;
+}
+
+#signin-google {
+    margin: 0.5em auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    border: 1px solid rgba(0,0,0,.16);
+    text-align: center;
+    border-radius: 4px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: .28px;
+    padding: 8px 16px;
+}
+
+#signin-google > span {
+    color: #001325;
+    opacity: .72;
+    letter-spacing: 0.015em;
+    font-weight: 500;
+}
+
+#terms {
+    text-align: left;
+    font-size: 0.7em;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.015em;
+    color: #001325;
+    opacity: .64;
+}
+
+#button-close-img {
+    height: 15px;
+}

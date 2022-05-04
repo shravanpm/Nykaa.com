@@ -1,0 +1,70 @@
+#login-page {
+    background-color: #f3f3f3;
+    padding: 2em 0;
+}
+
+#login-div {
+    margin: 1em auto;
+    padding: 1em;
+    width: 25vw;
+    background-color: white;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,.16);
+}
+
+#button-close-div {
+    /* color: transparent; */
+    text-align: left;
+    /* background-color: transparent; */
+    /* border: none */
+}
+
+#login-heading {
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+    margin-top: -1.4em;
+    color: #3f414d;
+    padding-bottom: 0.7em;
+    border-bottom: 1px solid rgba(0,0,0,.16);
+}
+
+.login-input {
+    margin: 10em auto 10em;
+    width: 100%;
+    border: 1px solid #ebebeb;
+    text-align: center;
+    border-radius: 4px;
+    background: #fc2779;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: .28px;
+    padding: 12px 16px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#button-close-img {
+    height: 20px;
+}
+
+#login-user-input-input {
+    background-color: #f3f3f3;
+    border-radius: 2px;
+    margin-top: 2em;
+    /* margin-bottom: 16px; */
+    padding: 0.86em;
+    width: 90%;
+    font-size: 0.6em;
+    text-align: center;
+    border: 0.5px solid #fc2779;
+}
+
+#login-required {
+    padding: 0.2em;
+    padding-right: 0.5em;
+    text-align: right;
+    font-size: 0.4em;
+    font-weight: 600;
+}

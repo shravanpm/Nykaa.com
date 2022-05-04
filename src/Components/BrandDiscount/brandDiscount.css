@@ -1,0 +1,20 @@
+#brandDiscount {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+#brandDiscount > div img {
+  /* object-fit: cover; */
+  width: 100%;
+}
+
+#brandDiscount > div p {
+  margin: 3px 0px 0px 0px;
+}
+
+.line2 {
+  color: gray;
+}

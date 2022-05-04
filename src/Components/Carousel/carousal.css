@@ -1,0 +1,10 @@
+#carousel {
+  margin-top: 30px;
+}
+
+.brand_offer_banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 270px;
+}
