@@ -1,5 +1,6 @@
 import React from "react";
-// import Carousel from "../Carousel/carousel";
+import BrandDiscount from "../BrandDiscount/brandDiscount";
+import Carousel from "../Carousel/carousel";
 import Navbar from "../Navbar/navbar";
 import Navigation from "../Navigations/navigation";
 
@@ -8,7 +9,8 @@ const Home = () => {
     <div>
       <Navbar />
       <Navigation />
-      {/* <Carousel/> */}
+      <Carousel />
+      <BrandDiscount />
     </div>
   );
 };
