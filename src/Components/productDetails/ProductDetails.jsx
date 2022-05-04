@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import "./ProductDetails.css";
 import { Icon } from "@iconify/react";
 import starIcon from "@iconify/icons-carbon/star";
@@ -8,24 +8,21 @@ import tickIcon from "@iconify/icons-charm/tick";
 import crossMark from "@iconify/icons-emojione-monotone/cross-mark";
 import infoCircleOutlined from "@iconify/icons-ant-design/info-circle-outlined";
 import { useEffect, useState } from "react";
+import {bag} from "../../Redux/action"
 
 export const ProductDetails = () => {
   const 
   [pin, setPin] = useState("");
   const [show, setShow] = useState("input");
-  const [stakePrice, setStakePrice] = useState("");
   const [discount, setDiscount] = useState("");
   const [reviews, setReviews] = useState("");
   const [ratings, setRatings] = useState("");
   const [data, setData] = useState({});
   const [valid, setValid] = useState(true);
   const details = useSelector((store) => store.productDetails);
-  
-
-  const min = +details.price * 70;
-  const max = min * 2;
-  const sPrice = Math.floor(Math.random() * (max - min) + min);
-  const dis = Math.round(((sPrice - +details.price * 70) / sPrice) * 100);
+  const bag1 = useSelector((store)=>store.bag)
+  const dispatch = useDispatch();
+  const dis = Math.round(((+details.mrp - +details.price) / +details.mrp) * 100);
   const rev = Math.floor(Math.random() * 100000);
   const rat = Math.floor(Math.random() * 1000000);
   const months = [
@@ -47,7 +44,6 @@ export const ProductDetails = () => {
   var day = date.getDate();
   var month = months[date.getMonth()];
   useEffect(() => {
-    setStakePrice(sPrice);
     setDiscount(dis);
     setReviews(rev);
     setRatings(rat);
@@ -81,12 +77,16 @@ export const ProductDetails = () => {
       setValid(false);
     }
   };
+  
+  const addToBag = ()=>{
+    dispatch(bag());
+  }
   return (
     <div id="main">
       <div className="flex container">
         <div id="imageDiv">
           <div id="mainImg">
-            <img src={details.image_link} alt="" id="mainImage" />
+            <img src={details.image} alt="" id="mainImage" />
           </div>
         </div>
         <div id="right">
@@ -136,18 +136,18 @@ export const ProductDetails = () => {
               <span>
                 MRP:
                 <span style={{ textDecoration: "line-through" }}>
-                  ₹{stakePrice}
+                  ₹{details.mrp}
                 </span>
               </span>
               <span style={{ fontWeight: "bold", fontSize: "20px" }}>
-                ₹{+details.price * 70}
+                ₹{details.price}
               </span>{" "}
               <span>{discount}% Off</span>
             </div>
             <div>inclusive of all taxes</div>
             <div className="flex pinDiv">
               <div id="AddToBag">
-                <button>Add to Bag</button>
+                <button onClick={addToBag}>Add to Bag</button>
               </div>
               <div id=
               "pin">
