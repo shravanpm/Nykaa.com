@@ -1,15 +1,17 @@
-import { useState } from 'react'
 
-import './App.css'
-import { ProductDetails } from "./Components/ProductDetails"
+import { useState } from "react";
+import "./App.css";
+import Home from "./components/Home/home";
+
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
+
+    <div className='App'>
+      <Home/>
       {/* <ProductDetails></ProductDetails> */}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+

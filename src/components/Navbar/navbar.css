@@ -1,0 +1,99 @@
+#navbar {
+  position: fixed;
+  width: 100%;
+}
+
+.offer_banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  background-color: rgb(255, 126, 177);
+}
+
+.offer_title {
+  width: 600px;
+  height: 26px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.offer_banner_tabs {
+  display: flex;
+  align-items: center;
+  height: 24px;
+}
+
+.offer_banner_tabs > div {
+  padding: 0px 14px;
+}
+
+.br {
+  border-right: 1px solid black;
+}
+
+.br a,
+.help a {
+  height: 100%;
+  display: flex;
+  color: #000;
+  text-decoration: none;
+}
+
+/* searchbar */
+#searchBar {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(228, 224, 224);
+  background-color: white;
+}
+
+.searchbar {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.searchbar > div {
+  display: flex;
+}
+
+.searchbar > div p {
+  padding: 0px 15px;
+  font-weight: 600;
+}
+
+.lsb svg {
+  width: 100px;
+}
+
+.get_by {
+  display: flex;
+}
+
+.search_input {
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.account,
+.account_gifts {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.account > div svg {
+  margin-top: 6px;
+}
+
+.account_gifts {
+  gap: 12px;
+}
+
+.account {
+  margin-right: 18px;
+}

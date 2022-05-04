@@ -1,0 +1,47 @@
+.nav_total {
+  box-shadow: 0 5px 5px -5px #333;
+}
+
+.nav_container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  padding-top: 100px;
+}
+
+.nav_links {
+  display: flex;
+}
+
+.nav_links > div p {
+  padding: 5px 15px;
+  color: gray;
+}
+
+.sale_sm_img img {
+  width: 110px;
+  padding: 5px 0px 5px 25px;
+}
+
+.poster {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.poster img {
+  width: 100%;
+}
+
+.hover-table-container {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 80%;
+  height: 430px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  /* border: 1px solid black; */
+}
