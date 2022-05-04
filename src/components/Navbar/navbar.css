@@ -12,7 +12,7 @@
 }
 
 .offer_title {
-  width: 550px;
+  width: 600px;
   height: 26px;
   font-size: 16px;
   font-weight: 500;
@@ -45,7 +45,8 @@
   height: 65px;
   display: flex;
   align-items: center;
-  box-shadow: 0 5px 5px -5px #333;
+  border-bottom: 1px solid rgb(228, 224, 224);
+  background-color: white;
 }
 
 .searchbar {
