@@ -13,7 +13,7 @@ export const SingleCard = (props) => {
           <div key={props.data.id}>
             <div style={{
         //    border : "1px solid red",
-           height : "446px",
+           height : "411px",
            width : "250px",
            backgroundColor: "white",
            padding : "10px",
@@ -24,12 +24,14 @@ export const SingleCard = (props) => {
                         color:"red",
                         padding:"5px",
                         fontSize:"12px"}}      >
-               <span>FEAUTURED</span>
-               <span style={{textAlign:"left",
+               {props.data.feautured === true ? 
+               <span style={{letterSpacing:".8px"}}>FEAUTURED</span> : null}
+               {props.data.bestSeller===true ? <span style={{textAlign:"left",
                         color:"green",
-                        padding:"5px"}}>
+                        padding:"5px",
+                        letterSpacing:".8px"}}>
                    BESTSELLER
-               </span>
+               </span> : null}
            </div>
            
            <div >
@@ -39,11 +41,12 @@ export const SingleCard = (props) => {
             //    border : "1px solid green"
            }}/>
            </div>
-           <div style={{height:"42px"}}>
-               <p >{`${props.data.name}`}</p>
+           <div style={{height:"42px",paddingBottom:"-2px",marginBottom:"-5px"}}>
+               <p style={{marginBottom:"-5px"}}>{`${props.data.name}`}</p>
            </div>
            <div>
-               <p><span style={{margin : "10px",
+               <p><span style={{marginLeft : "10px",marginRight:"5px",
+               marginTop:"50px",
                 color:"#616c78",
                 textDecoration:"line-through"}}>
                     MRP:{props.data.mrp}</span>
@@ -59,7 +62,7 @@ export const SingleCard = (props) => {
                }}>{props.data.offer}</p>
            </div>
            <div>
-                                <div>
+                                <div >
                                 {/* <Typography component="legend">Controlled</Typography>
                                 <Rating
                                 name="simple-controlled"
@@ -68,8 +71,8 @@ export const SingleCard = (props) => {
                                     setValue(newValue);
                                 }}
                                 /> */}
-                                <Typography component="legend" fillColor="red"></Typography>
-                                <Rating name="read-only" value={value} readOnly />
+                                <Typography style={{marginBottom:"-10px"}} component="legend" ></Typography>
+                                <Rating name="size-small" value={value} readOnly size="small" />
                                 {/* <Typography component="legend">Disabled</Typography>
                                 <Rating name="disabled" value={value} disabled />
                                 <Typography component="legend">No rating given</Typography>

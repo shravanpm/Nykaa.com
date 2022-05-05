@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 import { Add2Cart } from './add2cartButton';
 import { SingleCard } from './SingleCard';
+import { ProductCarousel } from "./ProductCarousel";
 
 export const Card2 = () => {
 const [data,setData] = useState([]);
@@ -24,20 +25,23 @@ const [data,setData] = useState([]);
         console.log("ssss",data);
     },[])
     return (
-        <div className="productCardList">
+
+       
+        <div>
+          <div>
+          
+          </div>
+          <div className="productCardList">
+          
       {data.map((e) => (
        
        <div>
           <SingleCard data = {e}/>
        </div>
-            // <div>
-               
-            //  { showButton == true?  <Add2Cart data={e}/> : null}
-            // </div>
-         
-        
+          
       ))}
     </div>
+        </div>
                
        
     )
