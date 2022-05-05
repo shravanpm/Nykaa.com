@@ -1,6 +1,6 @@
 import './SignIn.css';
-import image from '../Images/signup-giftbox.png';
-import close from '../Images/signup-close.png'
+import image from '../../Images/signup-giftbox.png';
+import close from '../../Images/signup-close.png'
 import { useNavigate } from 'react-router-dom';
 
 export const SignIn = () => {
