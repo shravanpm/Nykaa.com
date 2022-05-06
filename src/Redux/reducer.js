@@ -1,7 +1,7 @@
 import { PRODUCTDETAILS , BAG , BAGITEM} from "./action";
 
 const init = {
-  productDetails:{} , bag:0,bagItem:[]
+  productDetails:{} , bag:0, bagItem:[]
 };
 
 export const reducer = (store = init, { type, payload }) => {
