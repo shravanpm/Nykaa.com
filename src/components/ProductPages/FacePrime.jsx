@@ -8,6 +8,7 @@ import { SingleCard } from '../SingleCard';
 import { ProductCarousel } from "../ProductCarousel";
 import { Sidebar } from "../Sidebar";
 import { store } from '../../Redux/store';
+import { ProductPage } from "../ProductPage";
 
 
 
@@ -15,6 +16,8 @@ export const FacePrime = () => {
 const [data,setData] = useState([]);
    
 const carouselData = ["https://images-static.nykaa.com/uploads/a532b123-7e2e-40ef-8321-fb7c733203ff.jpg?tr=w-1200,cm-pad_resize"]
+
+let url = "http://localhost:5000/products/face-primer";
 
     async function getData(){
         let url = "http://localhost:5000/products/face-primer";
@@ -38,38 +41,10 @@ const carouselData = ["https://images-static.nykaa.com/uploads/a532b123-7e2e-40e
     },[])
     return (
 
-       
-        <div style={{width: "90%",                      
-                      margin:"auto",
-                      marginTop : "50px",}}>
-           
-            <div>
-            <ProductCarousel data = {carouselData}/>
-            </div>
-
-            <div>
-            <h1 style={{textAlign:"center"}}>All Products</h1>
-            </div>
-
-          <div style={{display : "flex"}}>
-                <div style={{width : "20%",
-                            marginRight : "-50px"}}>
-                    <Sidebar data = { {setDataSideBar : setDataSideBar, "data":data }}/>
-                </div>
-              <div className="productCardList">
-              
-                {data.map((e) => (
-                
-                <div key = {e.id}>
-                    <SingleCard data = {e}/>
-                </div>
-                    
-                ))}
-            </div>
-              
-          </div>
-         
-        </div>
+       <div>
+            <ProductPage data = {{carouselData:carouselData,url:url}}/>
+       </div>
+        
                
        
     )

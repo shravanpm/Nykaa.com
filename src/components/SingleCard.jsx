@@ -9,12 +9,16 @@ import "../stylesheets/SingleCard.css"
 export const SingleCard = (props) => {
 
     const [showButton,setShowButton] = useState(false);
+
     const [value,setValue] = useState(props.data.rating);
+
     const dispatch = useDispatch(); 
 
     const handleProduct = (data) => {
+    
         dispatch(productDetails(data));
-      }
+    
+    }
 
     return (
      <div>

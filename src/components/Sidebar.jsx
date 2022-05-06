@@ -106,38 +106,15 @@ const handleSort = (d,sortParam,asc) =>{
         {arr.map( (el,index) => (
             <Disclosure key={el}>
 
-                <Disclosure.Button style={{
-                    border : "none",
-                    cursor : "pointer",
-                    
-                    backgroundColor : "white",
-                    margin : "5px",
-                    // height : "50px",
-                    padding : "0px",
-                    marginBottom:"0px"
-
-                    }}>
+                <Disclosure.Button className='disclButton2 '>
                             
-                            <div style={{
-                    backgroundColor:"white",
-                    margin : "10px",
-                    padding : "5px",
-                    // paddingTop:"-10px",
-                    fontSize : "14px",
-                    display:"flex",
-                    textAlign:"left"
-                    
-                }}>
+                            <div className='disclButtonDiv '>
                     <div style={{paddingTop : "5px",
                 width:"500px"}}>
                     <b>{el}</b> 
                     </div>           
                 <div > 
-                    <ChevronDownIcon style={{
-                    height : "25px",
-                    width : "25px",
-                    paddingTop: "0px"
-                }}/>
+                    <ChevronDownIcon className='icon'/>
                 </div></div>
                 </Disclosure.Button>
 
