@@ -8,7 +8,7 @@ import tickIcon from "@iconify/icons-charm/tick";
 import crossMark from "@iconify/icons-emojione-monotone/cross-mark";
 import infoCircleOutlined from "@iconify/icons-ant-design/info-circle-outlined";
 import { useEffect, useState } from "react";
-import {bag,bagItem} from "../../Redux/action"
+import {bag,addProduct} from "../../Redux/action"
 
 export const ProductDetails = () => {
   const 
@@ -20,8 +20,8 @@ export const ProductDetails = () => {
   const [data, setData] = useState({});
   const [valid, setValid] = useState(true);
   const details = useSelector((store) => store.productDetails);
-  const bag1 = useSelector((store)=>store.bagItem)
-  // console.log("bag1",bag1)
+  const bag1 = useSelector((store)=>store.cartProducts)
+  console.log("bag1",bag1)
   const dispatch = useDispatch();
   const dis = Math.round(((+details.mrp - +details.price) / +details.mrp) * 100);
   const rev = Math.floor(Math.random() * 100000);
@@ -81,7 +81,7 @@ export const ProductDetails = () => {
   
   const addToBag = ()=>{
     dispatch(bag());
-    dispatch(bagItem(details))
+    dispatch(addProduct(details))
   }
   return (
     <div id="main">

@@ -1,6 +1,6 @@
 export const PRODUCTDETAILS = "PRODUCTDETAILS";
 export const BAG = "BAG";
-export const BAGITEM = "BAGITEM";
+export const ADD_PRODUCT = "ADD_PRODUCT";
 export const productDetails = (data) => {
   return {
     type: PRODUCTDETAILS,
@@ -13,10 +13,9 @@ export const bag = () => {
     payload: 1,
   };
 };
-
-export const bagItem = (data) => {
+export const addProduct = (data)=>{
   return {
-    type: BAGITEM,
-    payload: data,
+      type : ADD_PRODUCT,
+      payload : data,
   };
-};
+  };
