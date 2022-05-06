@@ -23,25 +23,47 @@
   padding: 5px 0px 5px 25px;
 }
 
-.poster {
-  width: 100%;
-  margin-top: 5px;
-}
-
-.poster img {
-  width: 100%;
-}
-
 .hover-table-container {
   position: absolute;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   width: 80%;
-  height: 430px;
+  height: 410px;
+  overflow: hidden;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
   background-color: white;
-  /* border: 1px solid black; */
+  box-shadow: 0 5px 5px -5px #333;
+  padding-top: 10px;
+  z-index: 100;
+}
+
+.hover-table-container > div:nth-child(even) {
+  background-color: rgb(248, 246, 246);
+  border-right: 2px solid white;
+}
+
+.hover-table-container p {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 10px;
+  color: gray;
+}
+
+.hover-table-container b {
+  margin-left: 10px;
+  opacity: 60%;
+}
+
+@media only screen and (max-width: 980px) {
+  .nav_container {
+    width: 100%;
+    padding-top: 130px;
+  }
+
+  .hover-table-container {
+    width: 100%;
+  }
 }
