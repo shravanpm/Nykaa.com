@@ -1,16 +1,24 @@
 import { Add2Cart } from "./add2cartButton"
 import { useState } from "react";
 import { Typography,Rating } from '@mui/material';
+import { productDetails } from '../Redux/action';
+import { useDispatch } from 'react-redux';
 
 
 export const SingleCard = (props) => {
 
     const [showButton,setShowButton] = useState(false);
-    const [value,setValue] = useState(props.data.rating)
+    const [value,setValue] = useState(props.data.rating);
+    const dispatch = useDispatch(); 
+
+    const handleProduct = (data) => {
+        dispatch(productDetails(data));
+      }
 
     return (
      <div>
           <div key={props.data.id}>
+              
             <div style={{
         //    border : "1px solid red",
            height : "411px",
@@ -20,7 +28,9 @@ export const SingleCard = (props) => {
            cursor : "pointer",
            borderRadius: "5px"
        }} onMouseOver={()=>{setShowButton(true)}} onMouseLeave={()=>{setShowButton(false)}} >
-           <div style={{textAlign:"left",
+           
+       <div  onClick={()=>handleProduct(props.data)}>
+       <div style={{textAlign:"left",
                         color:"red",
                         padding:"5px",
                         fontSize:"12px"}}      >
@@ -61,6 +71,8 @@ export const SingleCard = (props) => {
                    height:"20px",
                }}>{props.data.offer}</p>
            </div>
+       </div>
+
            <div>
                                 <div >
                                 {/* <Typography component="legend">Controlled</Typography>
@@ -80,7 +92,7 @@ export const SingleCard = (props) => {
                                 </div>
               
            </div>
-           
+        
            <div>
               
             { showButton === true?  <Add2Cart data={props.data}/> : null}
