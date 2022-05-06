@@ -1,0 +1,31 @@
+.buttonDiv {
+    display: flex;
+    margin-right: -10px;
+    height: 40px;
+    margin-bottom: -8px;
+    border-top: 2px solid #f3f3f3;
+    margin-left: -10px;
+}
+
+.buttonImg {
+    height: 25px;
+    width: 25px;
+    /* vertical-align: auto; */
+    padding-top: 5px;
+}
+
+.cardButton {
+    width: 70%;
+    background-color: #fc2779;
+    padding-top: 10px;
+    padding-right: 0px;
+    border-bottom-right-radius: 5px;
+}
+
+.cardButtonSpan {
+    width: 70%;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    align-items: center;
+}

@@ -1,0 +1,29 @@
+.productCardHeart{
+    height: 25px;
+    width: 25px;
+}
+.show{
+    opacity: 100%;
+}
+.noshow{
+   opacity: 100%;
+}
+.alignRight{
+   width:70%;
+}
+
+.productCardList{
+    display: grid;
+    
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:30px;
+    /* border: 2px solid blue; */
+    margin-left: 100px;
+}
+
+
+
+.productsSidebar{
+    display: flex;
+    flex-direction: column;
+}

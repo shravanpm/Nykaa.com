@@ -1,0 +1,49 @@
+.card {
+    height: 408px;
+    width: 250px;
+    background-color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cardTop {
+    text-align: left;
+    color: red;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.cardImage {
+    height: 200px;
+    width: 200px;
+}
+
+.cardNameDiv {
+    height: 42px;
+    padding-bottom: -2px;
+    margin-bottom: -5px;
+}
+
+.cardName {
+    margin-bottom: -5px;   
+}
+
+.cardMrp {
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-top: 50px;
+    color: #616c78;
+    text-decoration: line-through;
+}
+
+.cardOff {
+    margin: 10px;
+    color: green;
+}
+
+.cardOffer {
+    color: red;
+    font-size: 14px;
+    height: 20px;
+}
