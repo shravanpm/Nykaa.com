@@ -1,6 +1,7 @@
 import React from "react";
 import BrandDiscount from "../BrandDiscount/brandDiscount";
 import Carousel from "../Carousel/carousel";
+import { Footer } from "../Footer/footer";
 import Navbar from "../Navbar/navbar";
 import Navigation from "../Navigations/navigation";
 
@@ -11,6 +12,7 @@ const Home = () => {
       <Navigation />
       <Carousel />
       <BrandDiscount />
+      <Footer/>
     </div>
   );
 };

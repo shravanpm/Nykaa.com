@@ -66,28 +66,36 @@ const Carousel = () => {
     },
   ];
   return (
-    <div id='carousel'>
-      <Slider {...settings}>
-        {carousalData.map((data, index) => {
-          return (
-            <div key={index}>
-              <img style={{ margin: "auto" }} src={data.image} alt='' />
-              <center
-                style={{ fontSize: "10px", fontWeight: "600" }}
-              >
-                {data.title}
-              </center>
-            </div>
-          );
-        })}
-      </Slider>
-      <div className="brand_offer_banner">
+    <div>
+      <div className='poster'>
         <img
-          src='https://images-static.nykaa.com/uploads/4292a077-f0ab-4546-a3e2-8785ddf82cc4.jpg?tr=w-1200,cm-pad_resize'
+          src='https://images-static.nykaa.com/uploads/d79ef179-462b-4774-b1c6-845855e2c487.gif?tr=w-1200,cm-pad_resize'
           alt='test'
           loading='eager'
-          srcset='https://images-static.nykaa.com/uploads/4292a077-f0ab-4546-a3e2-8785ddf82cc4.jpg?tr=w-2400,cm-pad_resize 2x'
+          srcset='https://images-static.nykaa.com/uploads/d79ef179-462b-4774-b1c6-845855e2c487.gif?tr=w-2400,cm-pad_resize 2x'
         ></img>
+      </div>
+      <div id='carousel'>
+        <Slider {...settings}>
+          {carousalData.map((data, index) => {
+            return (
+              <div key={index}>
+                <img style={{ margin: "auto" }} src={data.image} alt='' />
+                <center style={{ fontSize: "10px", fontWeight: "600" }}>
+                  {data.title}
+                </center>
+              </div>
+            );
+          })}
+        </Slider>
+        <div className='brand_offer_banner'>
+          <img
+            src='https://images-static.nykaa.com/uploads/4292a077-f0ab-4546-a3e2-8785ddf82cc4.jpg?tr=w-1200,cm-pad_resize'
+            alt='test'
+            loading='eager'
+            srcset='https://images-static.nykaa.com/uploads/4292a077-f0ab-4546-a3e2-8785ddf82cc4.jpg?tr=w-2400,cm-pad_resize 2x'
+          ></img>
+        </div>
       </div>
     </div>
   );

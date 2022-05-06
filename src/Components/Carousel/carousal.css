@@ -8,3 +8,13 @@
   align-items: center;
   height: 270px;
 }
+
+.poster {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.poster img {
+  width: 100%;
+}
+
