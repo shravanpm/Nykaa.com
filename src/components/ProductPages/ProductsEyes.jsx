@@ -1,23 +1,23 @@
 // import Button from '@mui/material/Button';
 
-import "../stylesheets/card.css";
+import "../../stylesheets/card.css";
 import { useEffect, useState } from 'react';
 import axios from "axios";
-import { Add2Cart } from './add2cartButton';
-import { SingleCard } from './SingleCard';
-import { ProductCarousel } from "./ProductCarousel";
-import { Sidebar } from "./Sidebar";
-import { store } from '../Redux/store';
+import { Add2Cart } from '../add2cartButton';
+import { SingleCard } from '../SingleCard';
+import { ProductCarousel } from "../ProductCarousel";
+import { Sidebar } from "../Sidebar";
+import { store } from '../../Redux/store';
 
 
 
-export const ProductPage = () => {
+export const ProductsEyes = () => {
 const [data,setData] = useState([]);
    
 const carouselData = ["https://images-static.nykaa.com/uploads/a532b123-7e2e-40ef-8321-fb7c733203ff.jpg?tr=w-1200,cm-pad_resize"]
 
     async function getData(){
-        let url = "http://localhost:5000/products/face-primer";
+        let url = "http://localhost:5000/products/eyes";
         axios.get(url)
         .then(response =>{ 
             console.log(response.data)
@@ -42,6 +42,9 @@ const carouselData = ["https://images-static.nykaa.com/uploads/a532b123-7e2e-40e
             <div>
             <ProductCarousel data = {carouselData}/>
             </div>
+            {/* <div>
+                <img style={{width:"100%",height:"300px"}} src="https://www.nykaa.com/media/categoryInfo/art_banner_image/Eye_Shadow_buiyingguide_banner_n3.jpg" alt="" srcset="" />
+            </div> */}
 
             <div>
             <h1 style={{textAlign:"center"}}>All Products</h1>
@@ -72,23 +75,5 @@ const carouselData = ["https://images-static.nykaa.com/uploads/a532b123-7e2e-40e
 }
 
 
-/**
- * 
- const Home = ({ data }) => {
-  return (
-    <div className="kat">
-      {data.map(({ id, title, img, link }) => (
-        <li key={id}>
-          <span>{title}</span>
-          <div className="img-container">
-            <img src={img} alt={title}></img>
-          </div>
-        </li>
-      ))}
-    </div>
-  );
-};
- */
-/*
 
-*/
+ 
