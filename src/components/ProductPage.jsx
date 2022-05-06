@@ -1,6 +1,6 @@
 // import Button from '@mui/material/Button';
 
-import "../stylesheets/card.css";
+import "../stylesheets/ProductPage.css";
 import { useEffect, useState } from 'react';
 import axios from "axios";
 import { Add2Cart } from './add2cartButton';
@@ -11,13 +11,14 @@ import { store } from '../Redux/store';
 
 
 
-export const ProductPage = () => {
+export const ProductPage = (props) => {
 const [data,setData] = useState([]);
    
-const carouselData = ["https://images-static.nykaa.com/uploads/a532b123-7e2e-40ef-8321-fb7c733203ff.jpg?tr=w-1200,cm-pad_resize"]
+const carouselData = props.data.carouselData;
 
-    async function getData(){
-        let url = "http://localhost:5000/products/face-primer";
+    
+async function getData(){
+        let url = props.data.url;
         axios.get(url)
         .then(response =>{ 
             console.log(response.data)
@@ -26,7 +27,11 @@ const carouselData = ["https://images-static.nykaa.com/uploads/a532b123-7e2e-40e
         
     }
 
-    
+    const setDataSideBar = (d) => {
+        
+      setData([...d]);
+      console.log(data)
+    }
 
     useEffect(()=>{
         getData();
@@ -35,9 +40,7 @@ const carouselData = ["https://images-static.nykaa.com/uploads/a532b123-7e2e-40e
     return (
 
        
-        <div style={{width: "90%",                      
-                      margin:"auto",
-                      marginTop : "50px",}}>
+        <div className="productPage">
            
             <div>
             <ProductCarousel data = {carouselData}/>
@@ -47,10 +50,10 @@ const carouselData = ["https://images-static.nykaa.com/uploads/a532b123-7e2e-40e
             <h1 style={{textAlign:"center"}}>All Products</h1>
             </div>
 
-          <div style={{display : "flex"}}>
+          <div className="flex">
                 <div style={{width : "20%",
                             marginRight : "-50px"}}>
-                    <Sidebar/>
+                    <Sidebar data = { {setDataSideBar : setDataSideBar, "data":data }} />
                 </div>
               <div className="productCardList">
               

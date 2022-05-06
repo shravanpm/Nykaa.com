@@ -26,7 +26,9 @@ const carouselData = ["https://images-static.nykaa.com/uploads/a532b123-7e2e-40e
         
     }
 
-    
+    const setDataSideBar = (d) => {
+        setData(d)
+      } 
 
     useEffect(()=>{
         getData();
@@ -53,7 +55,7 @@ const carouselData = ["https://images-static.nykaa.com/uploads/a532b123-7e2e-40e
           <div style={{display : "flex"}}>
                 <div style={{width : "20%",
                             marginRight : "-50px"}}>
-                    <Sidebar/>
+                    <Sidebar data = { {"setData" : setDataSideBar, "data":data }}/>
                 </div>
               <div className="productCardList">
               
