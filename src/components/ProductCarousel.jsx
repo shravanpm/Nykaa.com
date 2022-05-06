@@ -7,7 +7,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 export const ProductCarousel = () => {
     return (
-        <div style={{width:"80%",
+        <div style={{width:"100%",
                     margin:"auto"}}>
 
             <Carousel autoPlay={true} showThumbs={false} showIndicators={true}>
