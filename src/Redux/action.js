@@ -1,5 +1,6 @@
 export const PRODUCTDETAILS = "PRODUCTDETAILS";
-export const BAG = "BAG"
+export const BAG = "BAG";
+export const ADD_PRODUCT = "ADD_PRODUCT";
 export const productDetails = (data) => {
   return {
     type: PRODUCTDETAILS,
@@ -12,3 +13,9 @@ export const bag = () => {
     payload: 1,
   };
 };
+export const addProduct = (data)=>{
+  return {
+      type : ADD_PRODUCT,
+      payload : data,
+  };
+  };
