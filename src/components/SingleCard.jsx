@@ -41,7 +41,7 @@ export const SingleCard = (props) => {
            <div >
                <img src={props.data.image} alt="img" srcSet="" className="cardImage"/>
            </div>
-           <div className="CardNameDiv">
+           <div className="CardNameDiv" style={{height:"40px"}}>
                <p className="cardName">{`${props.data.name}`}</p>
            </div>
            <div>
