@@ -1,15 +1,15 @@
 import { 	ChevronDownIcon } from '@heroicons/react/solid';
 import { Disclosure } from '@headlessui/react'
 import { useState } from 'react';
-import "../../stylesheets/Sidebar.css"
+import "../../stylesheets/Sidebar.css";
+import { Slider} from "@mui/material"
 
 export const Sidebar = (props) => {
 
-let arr = ["Brand","Price","Discount","Avg Customer Rating","Preferance","Concern","Skin Type","Formulation",
+let arr = ["Discount","Avg Customer Rating","Preferance","Concern","Skin Type","Formulation",
 "Gender","Finish","Color","Skin Tone","Conscious","Pack Size","Coverage"];
 
-let Sort = ["Popularity", "Discount" , "Name", "Customer Top Rated", "New Arrivals",
- "Price : High to Low", "Price : Low to High"]
+
 const [sort,setSort] = useState("Popularity");
 const handleSort = (d,sortParam,asc) =>{
     // console.log(props.data);
@@ -22,6 +22,29 @@ const handleSort = (d,sortParam,asc) =>{
     
     setDataSideBar(data)
     setSort(d);
+}
+
+const handleSortPrice = (price) =>{
+    // console.log(props.data);
+    let data = props.data.data;
+    // console.log("before",data); 
+if(price === 250){
+    data  = data.filter((el)=>{return el.price <= 250});
+}
+if(price === 251){
+    data  = data.filter((el)=>{return el.price > 250});
+    data  = data.filter((el)=>{return el.price <= 500});
+}  
+if(price === 500){
+    
+    data  = data.filter((el)=>{return el.price > 500});
+}  
+    
+const setDataSideBar = props.data.setDataSideBar;
+    
+    
+    setDataSideBar(data)
+    
 }
 
     return (
@@ -103,6 +126,93 @@ const handleSort = (d,sortParam,asc) =>{
 
 
 
+            <Disclosure key="brand">
+
+                <Disclosure.Button className='disclButton2 '>
+                            
+                            <div className='disclButtonDiv '>
+                    <div style={{paddingTop : "5px",
+                width:"500px"}}>
+                    <b>Brand</b> 
+                    </div>           
+                <div > 
+                    <ChevronDownIcon className='icon'/>
+                </div></div>
+
+                    < Disclosure.Panel>
+
+                        <div className='disclPanel'>
+                            
+                            Lakme
+                        </div>
+                    </Disclosure.Panel>
+
+                    < Disclosure.Panel>
+
+                        <div className='disclPanel'>
+                            
+                            Nykaa
+                        </div>
+                    </Disclosure.Panel>
+
+
+                    < Disclosure.Panel>
+
+                        <div className='disclPanel'>
+                            
+                            MaybeLine
+                        </div>
+                    </Disclosure.Panel>
+
+
+                </Disclosure.Button>
+
+            </Disclosure>  
+        
+
+            <Disclosure key="price">
+
+                <Disclosure.Button className='disclButton2 '>
+                            
+                            <div className='disclButtonDiv '>
+                    <div style={{paddingTop : "5px",
+                width:"500px"}}>
+                    <b>Price</b> 
+                    </div>           
+                <div > 
+                    <ChevronDownIcon className='icon'/>
+                </div></div>
+
+                    < Disclosure.Panel>
+
+                        <div className='disclPanel' onClick={()=>{handleSortPrice(250)}}>
+                            
+                            Price Less than 250
+                        </div>
+                    </Disclosure.Panel>
+
+                    < Disclosure.Panel>
+
+                        <div className='disclPanel' onClick={()=>{handleSortPrice(251)}}>
+                            Price 250 - 500
+                            
+                        </div>
+                    </Disclosure.Panel>
+
+
+                    < Disclosure.Panel>
+
+                        <div className='disclPanel' onClick={()=>{handleSortPrice(500)}}>
+                            
+                            Price More than 500
+                        </div>
+                    </Disclosure.Panel>
+
+
+                </Disclosure.Button>
+
+            </Disclosure>  
+        
         {arr.map( (el,index) => (
             <Disclosure key={el}>
 
@@ -116,6 +226,10 @@ const handleSort = (d,sortParam,asc) =>{
                 <div > 
                     <ChevronDownIcon className='icon'/>
                 </div></div>
+
+                    <Disclosure.Panel>
+                        
+                     </Disclosure.Panel>   
                 </Disclosure.Button>
 
             </Disclosure>    
