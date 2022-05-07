@@ -2,6 +2,7 @@ import "./App.css";
 import Home from "./components/Home/home";
 import { SignIn } from './components/SignIn/SignIn';
 import { Route, Routes } from 'react-router-dom';
+import { Login } from './components/SignIn/Login';
 // import {ProductDetails}from "./Components/productDetails/ProductDetails"
 // import {Address} from './Components/Address/Address'
 import {Card2} from "./components/Card2"
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/signin" element={<SignIn />}></Route>
+        <Route path="/login" element={<Login />}></Route>
       </Routes>
       {/* <ProductDetails></ProductDetails> */}
       {/* <Address/> */}
