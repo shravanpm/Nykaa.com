@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Skin = () => {
   const Skin = [
@@ -129,7 +130,9 @@ const Skin = () => {
               <div>
                 <b>{key}</b>
                 {Skin[i][0][key].map((el) => (
-                  <p>{el}</p>
+                  <Link to={"/cleansers"}>
+                    <p>{el}</p>
+                  </Link>
                 ))}
               </div>
             ))}

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Div } from "./StyledComponents/NykaaStyles";
+// import { Div } from "./StyledComponents/NykaaStyles";
 import "./thankyou.css";
 
 export const ThankYou = () => {
