@@ -172,11 +172,11 @@ const Navbar = () => {
             <div className='account_gifts'>
               <Link to={"/signin"}>
                 <div
-                  className='account'>
+                  className='account' style={{textDecoration:"none" , color:"black"}}>
                   <div>
                     <AccountCircleOutlinedIcon />
                   </div>
-                  <div>Account</div>
+                  <div style={{textDecoration:"none" , color:"black"}}>Account</div>
                 </div>
               </Link>
               <div>
