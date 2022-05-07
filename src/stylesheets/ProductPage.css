@@ -28,7 +28,7 @@
     display: grid;
     
     grid-template-columns: repeat(3,1fr);
-    grid-gap:30px;
+    grid-gap:25px;
     /* border: 2px solid blue; */
     margin-left: 100px;
 }
