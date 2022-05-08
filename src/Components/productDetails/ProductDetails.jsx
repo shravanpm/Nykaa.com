@@ -88,7 +88,7 @@ export const ProductDetails = () => {
   return (
     <div id="main">
       <Navbar></Navbar>
-      <div className="flex container">
+      <div className="flex container1">
         <div id="imageDiv">
           <div id="mainImg">
             <img src={details.image} alt="" id="mainImage" />

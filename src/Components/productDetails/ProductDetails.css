@@ -7,7 +7,7 @@
   display: flex;
   
 }
-.container {
+.container1 {
   border: 1px solid #f3f3f3;
   width: 85%;
   margin: auto;
@@ -15,6 +15,8 @@
   line-height: 30px;
   background-color: white;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-bottom: 20px;
+  margin-top: 10%;
 }
 #right{
   border-left: 2px solid #eceef0;
@@ -22,6 +24,7 @@
 #mainImage{
     width: 70%;
     padding: 10px 0px;
+    margin-left: 15% 
 }
 #imageDiv {
   width: 35%;
