@@ -15,8 +15,8 @@ export const ThankYou = () => {
     }, []);
    setTimeout(()=>{
        navigator("/")
-   },2000)
-    console.log(user);
+   },4000)
+    console.log(user );
     return (
         <div>
             <div className="thankyou">
