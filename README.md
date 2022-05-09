@@ -59,9 +59,9 @@ go to http://localhost:3000
   - `jsx`
   - `css`
 - #### Framework
-  - `React`
   - `Node.Js`
 - #### Libraries
+  - `React` 
   - `Express`
   - `mongoose`
 - #### Database
