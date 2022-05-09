@@ -1,0 +1,166 @@
+#navbar1 {
+  width: 100%;
+  height: 4.5rem;
+  display: flex;
+  background-color: white;
+  top: 0px;
+  position: fixed;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#navbar1 > div {
+  margin: auto;
+  padding-left: 10px;
+  text-align: left;
+  border-bottom: 2px solid white;
+}
+#navbar1 > div > h3 {
+  padding-top: 6px;
+}
+.Div {
+  display: flex;
+  gap: 1%;
+  width: 76%;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+.Div > div {
+  background-color: white;
+  width: 42%;
+  height: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.Div > div > button {
+  border: 2px solid rgb(252, 39, 121);
+}
+form> input {
+  border: none;
+  border-bottom: 2px solid rgb(235, 235, 235);
+  height: 2rem;
+  font-size: 16px;
+  width: 88%;
+  padding-left: 2%;
+  margin: 2% 5%;
+  outline: none;
+}
+.Div > div:focus {
+  border-bottom: 1px solid rgb(252, 39, 121);
+}
+.Div > .opt {
+  text-align: left;
+  width: 20%;
+}
+.Div > .opt > div {
+  height: 2rem;
+  padding: 8% 5% 3% 5%;
+  color: rgb(252, 39, 121);
+  border-right: 2px solid rgb(252, 39, 121);
+}
+.Div.pyOpt {
+  text-align: left;
+  width: 20%;
+}
+.Div > .pyOpt {
+  text-align: left;
+  width: 20%;
+}
+.Div > .pyOpt > div {
+  height: 2rem;
+  padding: 8% 5% 3% 5%;
+  color: black;
+  border-right: 2px solid white;
+}
+.Div > .pyOpt > hr {
+  border-block-color: rgb(235, 235, 235);
+  opacity: 30%;
+}
+.Div > .display {
+  width: 33%;
+  height: fit-content;
+}
+.Div > .display > .head {
+  display: flex;
+  padding: 0 5%;
+  justify-content: space-between;
+}
+.Div > .display > .card {
+  /* max-height: 21rem; */
+  min-height: 100px;
+  max-height: 400px;
+  height: 200px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 94%;
+  background-color: #f3f3f3;
+}
+.Div > .display > .card>div{
+    display: flex;
+    /* border: 1px solid red; */
+    width:100%;
+    background-color: white;
+    margin: 10px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 10px 0px;
+    justify-content: space-between;
+}
+.Div > .display > .card>div>div>img{
+    width: 100%;
+    height: 90%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.Div > .display > div>.foot {
+  padding: 0 5%;
+  border: 1px solid white;
+  margin-top: 10px;
+  background-color: white;
+}
+.footDiv{
+    background-color: #f3f3f3;
+    border: 1px solid #f3f3f3;
+    
+}
+.Div > .display > p,
+.Div > .display > h3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+#guest{
+  width:90%;
+  margin: 0 5% 5%;
+  padding: 2% 1%;
+  font-size: 17px;
+  font-weight: 600;
+  color: rgb(252, 39, 121);
+  background-color: white;
+  border: 1px solid rgb(252, 39, 121);
+  letter-spacing: 3px;
+}
+#loginRes{
+    width: 100%;
+}
+.name{
+    border-bottom: 1px solid #dad6d6;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+.r{
+    margin-left: 20px;
+    width: 70%;
+}
+.qty{
+    display: flex;
+    justify-content: space-between;
+}
+.cross{
+    text-decoration: line-through;
+    font-size: 14px;
+}
+.cross+span{
+    font-weight: bold;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}

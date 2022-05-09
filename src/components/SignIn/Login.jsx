@@ -29,7 +29,8 @@ export const Login = () => {
     const registerUser = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:5000/register', {
+        let url = "https://nykaa-backend-masai.herokuapp.com/register";
+        fetch(url, {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

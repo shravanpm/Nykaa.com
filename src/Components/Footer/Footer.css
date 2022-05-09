@@ -1,9 +1,14 @@
 .flex {
   display: flex;
 }
+#footer1>div{
+  background-color: #8c8d94;
+  border: none;
+  box-shadow: none;
+}
 .container > div {
-  /* border: 1px solid red; */
   width: 17%;
+  background-color: #8c8d94;
 }
 #footer1 {
   /* width: 100vw; */
@@ -13,6 +18,7 @@
   color: whitesmoke;
   padding: 60px 0px;
   font-family: Arial, sans-serif;
+  
 }
 #nykka {
   margin-top: -12px;

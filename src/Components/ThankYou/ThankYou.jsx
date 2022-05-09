@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Div } from "./StyledComponents/NykaaStyles";
 import "./thankyou.css";
 
 export const ThankYou = () => {
     const user = useSelector((state) => state.user);
+    console.log(user)
     const navigator = useNavigate();
 
     useEffect(() => {
@@ -13,16 +13,12 @@ export const ThankYou = () => {
             navigator("/checkout");
         }
     }, []);
-    // console.log(cartProducts);
-
-    // let off_price = 0;
-
-    // for (let item of cartProducts) {
-    //     off_price += +item.off_price * +item.quan;
-    // }
+   setTimeout(()=>{
+       navigator("/")
+   },2000)
     console.log(user);
     return (
-        <Div>
+        <div>
             <div className="thankyou">
                 <h1 className="success">
                     <i className="fa fa-check-circle"></i> Payment Success
@@ -46,6 +42,6 @@ export const ThankYou = () => {
                 </ul>
                 <h3 className="footer">Thank you for your payment</h3>
             </div>
-        </Div>
+        </div>
     );
 };

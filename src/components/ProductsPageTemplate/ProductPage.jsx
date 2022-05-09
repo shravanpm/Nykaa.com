@@ -9,69 +9,72 @@ import { ProductCarousel } from "./ProductCarousel";
 import { Sidebar } from "./Sidebar";
 import { store } from '../../Redux/store';
 
-
+import Navbar from "../Navbar/navbar";
 
 export const ProductPage = (props) => {
-const [data,setData] = useState([]);
-   
-const carouselData = props.data.carouselData;
+  const [data, setData] = useState([]);
 
-    
-async function getData(){
-        let url = props.data.url;
-        axios.get(url)
-        .then(response =>{ 
-            console.log(response.data)
-            setData(response.data)
-        });
-        
-    }
+  const carouselData = props.data.carouselData;
 
-    const setDataSideBar = (d) => {
-        
-      setData([...d]);
-      console.log(data)
-    }
 
-    useEffect(()=>{
-        getData();
-        console.log("ssss",data);
-    },[])
-    return (
+  async function getData() {
+    let url = props.data.url;
+    axios.get(url)
+      .then(response => {
+        console.log(response.data)
+        setData(response.data)
+      });
 
-       
-        <div className="productPage">
-           
-            <div>
-            <ProductCarousel data = {carouselData}/>
-            </div>
+  }
 
-            <div>
-            <h1 style={{textAlign:"center"}}>All Products</h1>
-            </div>
+  const setDataSideBar = (d) => {
 
-          <div className="flex">
-                <div style={{width : "20%",
-                            marginRight : "-50px"}}>
-                    <Sidebar data = { {setDataSideBar : setDataSideBar, "data":data }} />
-                </div>
-              <div className="productCardList">
-              
-                {data.map((e) => (
-                
-                <div key = {e.id}>
-                    <SingleCard data = {e}/>
-                </div>
-                    
-                ))}
-            </div>
-              
-          </div>
-         
+    setData([...d]);
+    console.log(data)
+  }
+
+  useEffect(() => {
+    getData();
+    console.log("ssss", data);
+  }, [])
+  return (
+
+    <div style={{border:"1px solid white"}}>
+      <Navbar></Navbar>
+    <div className="productPage" style={{paddingTop:"7%"}}>
+      
+      <div>
+        <ProductCarousel data={carouselData} />
+      </div>
+
+      <div>
+        <h1 style={{ textAlign: "center" }}>All Products</h1>
+      </div>
+
+      <div className="flex">
+        <div style={{
+          width: "20%",
+          marginRight: "-50px"
+        }}>
+          <Sidebar data={{ setDataSideBar: setDataSideBar, "data": data }} />
         </div>
-               
-       
-    )
+        <div className="productCardList">
+
+          {data.map((e) => (
+
+            <div key={e.id}>
+              <SingleCard data={e} />
+            </div>
+
+          ))}
+        </div>
+
+      </div>
+
+    </div>
+
+    </div>
+  )
 }
 
 

@@ -8,12 +8,15 @@ import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { useSelector } from "react-redux";
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
   const [offerTitle, setOfferTitle] = useState(true);
   const [value, setValue] = React.useState(null);
 
   const filter = createFilterOptions();
   const bag = useSelector((store) => store.bag);
+  const cartProducts=useSelector((store)=>store.cartProducts)
   useEffect(() => {
     const changeTitle = setInterval(() => {
       setOfferTitle((prev) => {
@@ -168,12 +171,15 @@ const Navbar = () => {
               />
             </div>
             <div className='account_gifts'>
-              <div className='account'>
-                <div>
-                  <AccountCircleOutlinedIcon />
+              <Link to={"/signin"}>
+                <div
+                  className='account' style={{textDecoration:"none" , color:"black"}}>
+                  <div>
+                    <AccountCircleOutlinedIcon />
+                  </div>
+                  <div style={{textDecoration:"none" , color:"black"}}>Account</div>
                 </div>
-                <div>Account</div>
-              </div>
+              </Link>
               <div>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -205,20 +211,22 @@ const Navbar = () => {
                     borderRadius: "50%",
                   }}
                 >
-                  {bag}
+                  {cartProducts.length}
                 </div>
-                <svg
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    d='M20.5 7.2H16.2V6.9C16.3 4.5 14.4 2.5 12 2.5C9.6 2.6 7.8 4.5 7.8 6.9V7.2H3.5C2.9 7.2 2.5 7.6 2.5 8.2V16.4C2.5 19.2 4.7 21.4 7.5 21.4H16.5C19.3 21.4 21.5 19.2 21.5 16.4V8.2C21.5 7.7 21.1 7.2 20.5 7.2ZM9.3 6.9C9.3 5.4 10.5 4.1 12 4C13.5 4.1 14.7 5.4 14.7 6.9V7.2H9.3V6.9ZM20 16.5C20 18.4 18.4 20 16.5 20H7.5C5.6 20 4 18.4 4 16.5V8.7H7.8V10.7C7.6 10.9 7.5 11.2 7.5 11.4C7.5 12 8 12.4 8.5 12.4C9 12.4 9.5 11.9 9.5 11.4C9.5 11.1 9.4 10.9 9.2 10.7V8.7H14.6V10.6C14.4 10.8 14.3 11.1 14.3 11.4C14.3 12 14.7 12.5 15.3 12.5C15.9 12.5 16.4 12.1 16.4 11.5C16.4 11.2 16.3 11 16.1 10.8V8.8H20V16.5Z'
-                    fill='black'
-                  ></path>
-                </svg>
+                <Link to={"/checkout"}>
+                  <svg
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path
+                      d='M20.5 7.2H16.2V6.9C16.3 4.5 14.4 2.5 12 2.5C9.6 2.6 7.8 4.5 7.8 6.9V7.2H3.5C2.9 7.2 2.5 7.6 2.5 8.2V16.4C2.5 19.2 4.7 21.4 7.5 21.4H16.5C19.3 21.4 21.5 19.2 21.5 16.4V8.2C21.5 7.7 21.1 7.2 20.5 7.2ZM9.3 6.9C9.3 5.4 10.5 4.1 12 4C13.5 4.1 14.7 5.4 14.7 6.9V7.2H9.3V6.9ZM20 16.5C20 18.4 18.4 20 16.5 20H7.5C5.6 20 4 18.4 4 16.5V8.7H7.8V10.7C7.6 10.9 7.5 11.2 7.5 11.4C7.5 12 8 12.4 8.5 12.4C9 12.4 9.5 11.9 9.5 11.4C9.5 11.1 9.4 10.9 9.2 10.7V8.7H14.6V10.6C14.4 10.8 14.3 11.1 14.3 11.4C14.3 12 14.7 12.5 15.3 12.5C15.9 12.5 16.4 12.1 16.4 11.5C16.4 11.2 16.3 11 16.1 10.8V8.8H20V16.5Z'
+                      fill='black'
+                    ></path>
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>

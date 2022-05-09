@@ -1,4 +1,4 @@
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./ProductDetails.css";
 import { Icon } from "@iconify/react";
 import starIcon from "@iconify/icons-carbon/star";
@@ -8,11 +8,13 @@ import tickIcon from "@iconify/icons-charm/tick";
 import crossMark from "@iconify/icons-emojione-monotone/cross-mark";
 import infoCircleOutlined from "@iconify/icons-ant-design/info-circle-outlined";
 import { useEffect, useState } from "react";
-import {bag,addProduct} from "../../Redux/action"
+import { bag, addProduct } from "../../Redux/action"
+import Navbar from "../Navbar/navbar";
+import { Footer } from "../Footer/footer";
 
 export const ProductDetails = () => {
-  const 
-  [pin, setPin] = useState("");
+  const
+    [pin, setPin] = useState("");
   const [show, setShow] = useState("input");
   const [discount, setDiscount] = useState("");
   const [reviews, setReviews] = useState("");
@@ -20,8 +22,8 @@ export const ProductDetails = () => {
   const [data, setData] = useState({});
   const [valid, setValid] = useState(true);
   const details = useSelector((store) => store.productDetails);
-  const bag1 = useSelector((store)=>store.cartProducts)
-  console.log("bag1",bag1)
+  const bag1 = useSelector((store) => store.cartProducts)
+  
   const dispatch = useDispatch();
   const dis = Math.round(((+details.mrp - +details.price) / +details.mrp) * 100);
   const rev = Math.floor(Math.random() * 100000);
@@ -53,10 +55,10 @@ export const ProductDetails = () => {
     setPin(e.target.value);
     setValid(true);
   };
-  
+
   const searchPin = () => {
-    if 
-    (pin.length === 6) {
+    if
+      (pin.length === 6) {
       setShow("fetch");
       async function getPin() {
         let res = await fetch(`https://api.postalpincode.in/pincode/${pin}`);
@@ -78,14 +80,14 @@ export const ProductDetails = () => {
       setValid(false);
     }
   };
-  
-  const addToBag = ()=>{
-    dispatch(bag());
+
+  const addToBag = () => {
     dispatch(addProduct(details))
   }
   return (
-    <div id="main">
-      <div className="flex container">
+    <div id="main" style={{marginTop:"-20px"}}>
+      <Navbar></Navbar>
+      <div className="flex container1">
         <div id="imageDiv">
           <div id="mainImg">
             <img src={details.image} alt="" id="mainImage" />
@@ -152,7 +154,7 @@ export const ProductDetails = () => {
                 <button onClick={addToBag}>Add to Bag</button>
               </div>
               <div id=
-              "pin">
+                "pin">
                 {show == "input" ? (
                   <div>
                     <div className="delivery">
@@ -175,9 +177,9 @@ export const ProductDetails = () => {
                   <div>
                     <span className="delivery">
                       <Icon icon={locationIcon} className="location" />
-                      Delivery Options for 
-                      <span style={{color:"#fc2779"}}> {pin}</span>
-                      <button onClick={() => (setShow("input"), setPin(""))} style={{color:"#fc2779" , border:"1px solid #fc2779" , backgroundColor:"white", marginLeft:"10px" , height:"25px"}}>Change</button>
+                      Delivery Options for
+                      <span style={{ color: "#fc2779" }}> {pin}</span>
+                      <button onClick={() => (setShow("input"), setPin(""))} style={{ color: "#fc2779", border: "1px solid #fc2779", backgroundColor: "white", marginLeft: "10px", height: "25px" }}>Change</button>
                     </span>
                     <div>
                       Shipping to: {data.Block},{data.Country}
@@ -200,9 +202,9 @@ export const ProductDetails = () => {
                   <div>
                     <span className="delivery">
                       <Icon icon={locationIcon} className="location" />
-                      Delivery Options for 
-                      <span style={{color:"#fc2779"}}> {pin}</span>
-                      <button onClick={() => (setShow("input"), setPin(""))} style={{color:"#fc2779" , border:"1px solid #fc2779", backgroundColor:"white", marginLeft:"10px" , height:"25px"}}>Change</button>
+                      Delivery Options for
+                      <span style={{ color: "#fc2779" }}> {pin}</span>
+                      <button onClick={() => (setShow("input"), setPin(""))} style={{ color: "#fc2779", border: "1px solid #fc2779", backgroundColor: "white", marginLeft: "10px", height: "25px" }}>Change</button>
                     </span>
                     <div>
                       <Icon icon={crossMark} style={{ color: "red" }} />
@@ -224,6 +226,7 @@ export const ProductDetails = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
