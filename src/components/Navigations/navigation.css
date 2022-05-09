@@ -56,6 +56,13 @@
   margin-left: 10px;
   opacity: 60%;
 }
+.pro{
+  text-decoration: none;
+
+}
+.pro>p:hover{
+  color: #ff7eb1;
+}
 
 @media only screen and (max-width: 980px) {
   .nav_container {

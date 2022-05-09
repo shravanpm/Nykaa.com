@@ -17,7 +17,7 @@ export const Checkout = () => {
   for (let i = 0; i < cartProducts.length; i++) {
     subTotal += +cartProducts[i].price;
   }
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const [edit, setEdit] = useState(true);
   const [address, setAddress] = useState({
     Name: "",

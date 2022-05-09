@@ -130,8 +130,8 @@ const Skin = () => {
               <div>
                 <b>{key}</b>
                 {Skin[i][0][key].map((el) => (
-                  <Link to={"/cleansers"}>
-                    <p>{el}</p>
+                  <Link to={"/cleansers"} className="pro">
+                    <p >{el}</p>
                   </Link>
                 ))}
               </div>
