@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HealthAndWellness = () => {
   const HealthAndWellness = [
@@ -114,7 +115,9 @@ const HealthAndWellness = () => {
               <div>
                 <b>{key}</b>
                 {HealthAndWellness[i][0][key].map((el) => (
-                  <p>{el}</p>
+                  <Link to={"/dryfruits"} className='pro'>
+                    <p>{el}</p>
+                  </Link>
                 ))}
               </div>
             ))}
