@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Makeup = () => {
   const Makeup = [
@@ -125,7 +126,9 @@ const Makeup = () => {
               <div>
                 <b>{key}</b>
                 {Makeup[i][0][key].map((el) => (
-                  <p>{el}</p>
+                  <Link to={"/faceprime"} className='pro'>
+                    <p>{el}</p>
+                  </Link>
                 ))}
               </div>
             ))}
