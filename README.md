@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Clone of Nykaa.com 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project we have tried to make a clone of <a href="https://nykaa.com/" target="_blank">Nykaa Website</a>. With our efforts and the technology stack,we were able to clone the front end, integrated it with backend and added similar looks and features.
 
-## Available Scripts
+<div style='page-break-after: always'></div>
 
-In the project directory, you can run:
+### <u>Deployed Link</u>
 
-### `npm start`
+Deployed with Netlify
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+https://nykaareact.netlify.app/
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### <u>Run Locally</u>
 
-### `npm test`
+Clone the project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+git clone https://https://github.com/pankajnandi/Nykaa.com.git
+```
 
-### `npm run build`
+Install npm packages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Run the surver
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm run dev
+```
 
-### `npm run eject`
+View in Browser
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+go to http://localhost:3000
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<div style='page-break-after: always'></div>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Team Members
 
-## Learn More
+- **[Rohan Redekar](https://github.com/RohanRedekar)**
+- **[Pankaj Kandpal](https://github.com/pankajnandi)**
+- **[Sushruti Nihale](https://github.com/SushrutiNihale)**
+- **[Shravan PM](https://github.com/shravanpm)**
+- **[Mayuri Warale](https://github.com/mayuri3598)**
+- **[Sumit Ranjan](https://github.com/sumitranjan)**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Tech Stack Used : -
 
-### Code Splitting
+- #### Languages
+  - `jsx`
+  - `css`
+- #### Framework
+  - `React`
+  - `Node.Js`
+- #### Libraries
+  - `Express`
+  - `mongoose`
+- #### Database
+  - `MongoDB`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+All the data got stored in and called from <b>Mongo Atlas cloud database</b>.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<div style='page-break-after: always'></div>
 
-### Making a Progressive Web App
+### <u>Functionalities</u>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Signup
+- Login
+- Sort and filter
+- Cart
+- Standard Adress using pincode
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### <u  style="text-decoration:none">You can read more about our project on our blog : <a href="https://medium.com/@sushrutin6/react-redux-project-cloning-nykaa-f20b16f5983b" target="_blank">Clone of Nykaa</a> </u>
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Thank You :sparkling_heart: :kissing_heart:
