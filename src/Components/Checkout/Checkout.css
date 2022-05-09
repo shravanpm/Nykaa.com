@@ -108,6 +108,7 @@ form> input {
     height: 90%;
     margin-top: 10px;
     margin-left: 10px;
+    border: none;
 }
 .Div > .display > div>.foot {
   padding: 0 5%;

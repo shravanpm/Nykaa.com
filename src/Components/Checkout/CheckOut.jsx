@@ -188,7 +188,7 @@ export const Checkout = () => {
                         <img
                           src={e.image}
                           alt=""
-                          style={{ width: "100%", border: "1px solid red" }}
+                          style={{ width: "100%" }}
                         />
                       </div>
                       <div className="r">
