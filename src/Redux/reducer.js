@@ -4,6 +4,7 @@ import {
   ADD_PRODUCT,
   USER_DETAILS,
   USER_STATUS,
+  USER
 } from "./action";
 
 const init = {
@@ -18,6 +19,7 @@ const init = {
     mobile: null,
     email: null,
   },
+  user:{}
 };
 
 export const reducer = (store = init, { type, payload }) => {
@@ -38,6 +40,11 @@ export const reducer = (store = init, { type, payload }) => {
         ...store,
         isLoggedIn: payload,
       };
+      case USER:
+        return {
+          ...store,
+          user:payload
+        }
     default:
       return store;
   }

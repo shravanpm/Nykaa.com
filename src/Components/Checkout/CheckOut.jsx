@@ -1,117 +1,12 @@
 import React, { useState } from "react";
 import login from "./login.png";
-import styled from "styled-components";
 // import { Cart } from "../Cart_Page/Cart";
 import foot from "./foot.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 // import { setUser, deleteFromBag } from "../../Redux/action";
-import axios from "axios";
-
-const Nav = styled.nav`
-  width: 100%;
-  height: 4.5rem;
-  display: flex;
-  background-color: white;
-  top: 0px;
-  position: fixed;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-  & > div {
-    margin: auto;
-    padding-left: 10px;
-    text-align: left;
-    border-bottom: 2px solid white;
-
-    & > h3 {
-      padding-top: 6px;
-    }
-  }
-`;
-
-const Div = styled.div`
-  display: flex;
-  gap: 1%;
-  width: 76%;
-  margin-left: 12%;
-  margin-right: 12%;
-
-  & > div {
-    background-color: white;
-    width: 42%;
-    height: fit-content;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-    & > button {
-      border: 2px solid rgb(252, 39, 121);
-    }
-    & input {
-      border: none;
-      border-bottom: 2px solid rgb(235, 235, 235);
-      height: 2rem;
-      font-size: 16px;
-      width: 88%;
-      padding-left: 2%;
-      margin: 2% 5%;
-      outline: none;
-
-      &:focus {
-        border-bottom: 1px solid rgb(252, 39, 121);
-      }
-    }
-  }
-  & > .opt {
-    text-align: left;
-    width: 20%;
-
-    & > div {
-      height: 2rem;
-      padding: 8% 5% 3% 5%;
-      color: rgb(252, 39, 121);
-      border-right: 2px solid rgb(252, 39, 121);
-    }
-  }
-  & > .pyOpt {
-    text-align: left;
-    width: 20%;
-
-    & > div {
-      height: 2rem;
-      padding: 8% 5% 3% 5%;
-      color: black;
-      border-right: 2px solid white;
-
-      & > hr {
-        border-block-color: rgb(235, 235, 235);
-        opacity: 30%;
-      }
-    }
-  }
-  & > .display {
-    width: 33%;
-    height: fit-content;
-
-    & > .head {
-      display: flex;
-      padding: 0 5%;
-      justify-content: space-between;
-    }
-    & > .card {
-      max-height: 21rem;
-      overflow-y: scroll;
-      overflow-x: hidden;
-    }
-    & > .foot {
-      padding: 0 5%;
-
-      & > p,
-      & > h3 {
-        display: flex;
-        justify-content: space-between;
-      }
-    }
-  }
-`;
+import {setUser} from "../../Redux/action"
+import "./Checkout.css";
 
 export const Checkout = () => {
   let body = document.querySelector("body");
@@ -142,14 +37,12 @@ export const Checkout = () => {
       [name]: e.target.value,
     });
   };
-
-
-
   const checkAdd = () => {
     if (address.Number.length !== 10 && address.Pincode.length !== 6) {
       alert("Enter Correct Mobile Number and Pincode");
       return;
     }
+    dispatch(setUser(address))
     setPage(2);
   };
 
@@ -170,7 +63,7 @@ export const Checkout = () => {
     alert("Order Placed Successfully!!  Thank You for Ordering");
     navigate("/thankyou");
   };
-  console.log("page", page);
+ 
   return (
     <div
       style={{
@@ -181,7 +74,7 @@ export const Checkout = () => {
     >
       {/*  Navbar */}
 
-      <Nav>
+      <div id="navbar1">
         <div
           style={{
             width: "27.5%",
@@ -220,7 +113,6 @@ export const Checkout = () => {
             width: "15%",
             height: "100%",
             borderRight: "1px solid grey",
-            borderBottom: "2px solid grey",
             color: `${page === 1 ? "rgb(252, 39, 121)" : "black"}`,
             borderBottom: `${
               page === 1 ? "2px solid rgb(252, 39, 121)" : "2px solid grey"
@@ -234,7 +126,6 @@ export const Checkout = () => {
             width: "15%",
             height: "100%",
             borderRight: "1px solid grey",
-            borderBottom: "2px solid grey",
             color: `${page === 2 ? "rgb(252, 39, 121)" : "black"}`,
             borderBottom: `${
               page === 2 ? "2px solid rgb(252, 39, 121)" : "2px solid grey"
@@ -250,35 +141,22 @@ export const Checkout = () => {
             borderBottom: "2px solid white",
           }}
         ></div>
-      </Nav>
+      </div>
 
       {/*  Pages of Heading*/}
 
       <div style={{ marginTop: "6rem", width: "100%" }}>
         {page === 0 ? (
-          <Div>
+          <div className="Div">
             <div className="opt">
               <div>Login/Register</div>
             </div>
             <div>
               <div>
-                <img src={login} alt="login/register" />
+                <img src={login} alt="login/register" id="loginRes" />
               </div>
               <div>
-                <button
-                  style={{
-                    width: "90%",
-                    margin: "0 5% 5%",
-                    padding: "2% 1%",
-                    fontSize: "17px",
-                    fontWeight: "600",
-                    color: "rgb(252, 39, 121)",
-                    backgroundColor: "white",
-                    border: "1px solid rgb(252, 39, 121)",
-                    letterSpacing: "3px",
-                  }}
-                  onClick={() => setPage(1)}
-                >
+                <button id="guest" onClick={() => setPage(1)}>
                   CONTINUE AS GUEST ᐳ
                 </button>
               </div>
@@ -302,56 +180,64 @@ export const Checkout = () => {
                   EDIT{" "}
                 </button>
               </div>
-
-              {edit &&
-                cartProducts.map((e) => (
-                  <div className="card">
-                    <div style={{ display: "flex", border: "1px solid red" }}>
-                      <div style={{ width: "30%", border: "1px solid red" }}>
+              <div className="card">
+                {edit &&
+                  cartProducts.map((e) => (
+                    <div>
+                      <div style={{ width: "30%" }}>
                         <img
                           src={e.image}
                           alt=""
-                          style={{ width: "60%", border: "1px solid red" }}
+                          style={{ width: "100%", border: "1px solid red" }}
                         />
                       </div>
-                      <div style={{ width: "70%", border: "1px solid green" }}>
-                        <div>{e.name}</div>
-                        <div style={{ display: "flex" }}>
+                      <div className="r">
+                        <div className="name">{e.name}</div>
+                        <div className="qty">
                           <div>QTY: 1 </div>
                           <div>
-                            <span> {e.mrp} </span>
-                            <span> {e.price} </span>
+                            <span className="cross"> ₹{e.mrp} </span>
+                            <span> ₹{e.price} </span>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              <div className="foot">
-                <p>
-                  <span>Sub Total</span>
-                  <span>₹{subTotal}</span>
-                </p>
-                <p>
-                  <span>Shipping Charge</span>
-                  <span style={{ color: "rgb(77,182,172)" }}>
-                    {subTotal < 499 ? "₹70" : "🛈 Free"}
-                  </span>
-                </p>
-                <p style={{ color: "rgb(77,182,172)" }}>
-                  <span>Bag Discount</span>
-                  <span>-₹0</span>
-                </p>
-                <h3>
-                  <span>Grand Total</span>
-                  <span>₹{subTotal < 499 ? subTotal + 70 : subTotal}</span>
-                </h3>
+                  ))}
+              </div>
+              <div className="footDiv">
+                <div className="foot">
+                  <p className="flex">
+                    <div>Sub Total</div>
+                    <div>₹{subTotal}</div>
+                  </p>
+                  <p className="flex">
+                    <div>Shipping Charge</div>
+                    <div style={{ color: "rgb(77,182,172)" }}>
+                      {subTotal < 499 ? "₹70" : "🛈 Free"}
+                    </div>
+                  </p>
+                  <p className="flex" style={{ color: "rgb(77,182,172)" }}>
+                    <div>Bag Discount</div>
+                    <div>-₹0</div>
+                  </p>
+                  <h3
+                    style={{
+                      borderTop: "1px solid #dad6d6",
+                      borderBottom: "1px solid #dad6d6",
+                      padding: "10px 0px",
+                    }}
+                    className="flex"
+                  >
+                    <div>Grand Total</div>
+                    <div>₹{subTotal < 499 ? subTotal + 70 : subTotal}</div>
+                  </h3>
+                </div>
               </div>
             </div>
             {/* </div> */}
-          </Div>
+          </div>
         ) : page === 1 ? (
-          <Div>
+          <div className="Div">
             <div className="opt">
               <div>New Address</div>
             </div>
@@ -443,55 +329,63 @@ export const Checkout = () => {
                   EDIT{" "}
                 </button>
               </div>
-
-              {edit &&
-                cartProducts.map((e) => (
-                  <div className="card">
-                    <div style={{ display: "flex", border: "1px solid red" }}>
-                      <div style={{ width: "30%", border: "1px solid red" }}>
+              <div className="card">
+                {edit &&
+                  cartProducts.map((e) => (
+                    <div>
+                      <div style={{ width: "30%" }}>
                         <img
                           src={e.image}
                           alt=""
-                          style={{ width: "60%", border: "1px solid red" }}
+                          style={{ width: "100%", border: "1px solid red" }}
                         />
                       </div>
-                      <div style={{ width: "70%", border: "1px solid green" }}>
-                        <div>{e.name}</div>
-                        <div style={{ display: "flex" }}>
+                      <div className="r">
+                        <div className="name">{e.name}</div>
+                        <div className="qty">
                           <div>QTY: 1 </div>
                           <div>
-                            <span> {" "+e.mrp} </span>
-                            <span> {e.price} </span>
+                            <span className="cross"> ₹{e.mrp} </span>
+                            <span> ₹{e.price} </span>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              <div className="foot">
-                <p>
-                  <span>Sub Total</span>
-                  <span>₹{subTotal}</span>
-                </p>
-                <p>
-                  <span>Shipping Charge</span>
-                  <span style={{ color: "rgb(77,182,172)" }}>
-                    {subTotal < 499 ? "₹70" : "🛈 Free"}
-                  </span>
-                </p>
-                <p style={{ color: "rgb(77,182,172)" }}>
-                  <span>Bag Discount</span>
-                  <span>-₹0</span>
-                </p>
-                <h3>
-                  <span>Grand Total</span>
-                  <span>₹{subTotal < 499 ? subTotal + 70 : subTotal}</span>
-                </h3>
+                  ))}
+              </div>
+              <div className="footDiv">
+                <div className="foot">
+                  <p className="flex">
+                    <div>Sub Total</div>
+                    <div>₹{subTotal}</div>
+                  </p>
+                  <p className="flex">
+                    <div>Shipping Charge</div>
+                    <div style={{ color: "rgb(77,182,172)" }}>
+                      {subTotal < 499 ? "₹70" : "🛈 Free"}
+                    </div>
+                  </p>
+                  <p className="flex" style={{ color: "rgb(77,182,172)" }}>
+                    <div>Bag Discount</div>
+                    <div>-₹0</div>
+                  </p>
+                  <h3
+                    style={{
+                      borderTop: "1px solid #dad6d6",
+                      borderBottom: "1px solid #dad6d6",
+                      padding: "10px 0px",
+                    }}
+                    className="flex"
+                  >
+                    <div>Grand Total</div>
+                    <div>₹{subTotal < 499 ? subTotal + 70 : subTotal}</div>
+                  </h3>
+                </div>
               </div>
             </div>
-          </Div>
+          </div>
         ) : (
-          <Div>
+          <div className="Div">
             <div className="pyOpt">
               <div
                 style={{
@@ -598,6 +492,7 @@ export const Checkout = () => {
                   />
                   <div>
                     <input
+                      style={{marginLeft:"5%"}}
                       type="text"
                       placeholder="VPA/UPI ID (eg. 9876543210@upi)"
                     />
@@ -605,16 +500,15 @@ export const Checkout = () => {
                   <button
                     style={{
                       width: "90%",
-                      margin: "0 5%",
                       height: "3rem",
                       color: "white",
                       backgroundColor: "rgb(252, 39, 121)",
                       fontWeight: "600",
-                      marginBottom: "5%",
+                      margin: "5% 5%",
                     }}
                     onClick={checkOutItem}
                   >
-                    Pay ₹{subTotal < 499 ?subTotal+70:subTotal} Now
+                    Pay ₹{subTotal < 499 ? subTotal + 70 : subTotal} Now
                   </button>
                 </>
               ) : payOpt === 2 ? (
@@ -636,7 +530,7 @@ export const Checkout = () => {
                     >
                       Enter Mobile Number/ Google Pay UPI ID
                     </p>
-                    <input type="text" placeholder={address.Number} />
+                    <input style={{marginLeft:"5%"}} type="text" placeholder={address.Number} />
                   </div>
                   <button
                     style={{
@@ -650,7 +544,7 @@ export const Checkout = () => {
                     }}
                     onClick={checkOutItem}
                   >
-                    Pay ₹{subTotal < 499 ?subTotal+70:subTotal} Now
+                    Pay ₹{subTotal < 499 ? subTotal + 70 : subTotal} Now
                   </button>
                 </>
               ) : payOpt === 5 ? (
@@ -683,7 +577,7 @@ export const Checkout = () => {
                     }}
                     onClick={checkOutItem}
                   >
-                    Pay ₹{subTotal < 499 ?subTotal+70:subTotal} by Cash
+                    Pay ₹{subTotal < 499 ? subTotal + 70 : subTotal} by Cash
                   </button>
                 </>
               ) : (
@@ -746,50 +640,58 @@ export const Checkout = () => {
                   EDIT{" "}
                 </button>
               </div>
-
-              {edit &&
-                cartProducts.map((e) => (
-                  <div className="card">
-                    <div style={{ display: "flex", border: "1px solid red" }}>
-                      <div style={{ width: "30%", border: "1px solid red" }}>
+              <div className="card">
+                {edit &&
+                  cartProducts.map((e) => (
+                    <div>
+                      <div style={{ width: "30%" }}>
                         <img
                           src={e.image}
                           alt=""
-                          style={{ width: "60%", border: "1px solid red" }}
+                          style={{ width: "100%", border: "1px solid red" }}
                         />
                       </div>
-                      <div style={{ width: "70%", border: "1px solid green" }}>
-                        <div>{e.name}</div>
-                        <div style={{ display: "flex" }}>
+                      <div className="r">
+                        <div className="name">{e.name}</div>
+                        <div className="qty">
                           <div>QTY: 1 </div>
                           <div>
-                            <span> {" "+e.mrp} </span>
-                            <span> {e.price} </span>
+                            <span className="cross"> ₹{e.mrp} </span>
+                            <span> ₹{e.price} </span>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              <div className="foot">
-                <p>
-                  <span>Sub Total</span>
-                  <span>₹{subTotal}</span>
-                </p>
-                <p>
-                  <span>Shipping Charge</span>
-                  <span style={{ color: "rgb(77,182,172)" }}>
-                    {subTotal < 499 ? "₹70" : "🛈 Free"}
-                  </span>
-                </p>
-                <p style={{ color: "rgb(77,182,172)" }}>
-                  <span>Bag Discount</span>
-                  <span>-₹0</span>
-                </p>
-                <h3>
-                  <span>Grand Total</span>
-                  <span>₹{subTotal < 499 ? subTotal + 70 : subTotal}</span>
-                </h3>
+                  ))}
+              </div>
+              <div className="footDiv">
+                <div className="foot">
+                  <p className="flex">
+                    <div>Sub Total</div>
+                    <div>₹{subTotal}</div>
+                  </p>
+                  <p className="flex">
+                    <div>Shipping Charge</div>
+                    <div style={{ color: "rgb(77,182,172)" }}>
+                      {subTotal < 499 ? "₹70" : "🛈 Free"}
+                    </div>
+                  </p>
+                  <p className="flex" style={{ color: "rgb(77,182,172)" }}>
+                    <div>Bag Discount</div>
+                    <div>-₹0</div>
+                  </p>
+                  <h3
+                    style={{
+                      borderTop: "1px solid #dad6d6",
+                      borderBottom: "1px solid #dad6d6",
+                      padding: "10px 0px",
+                    }}
+                    className="flex"
+                  >
+                    <div>Grand Total</div>
+                    <div>₹{subTotal < 499 ? subTotal + 70 : subTotal}</div>
+                  </h3>
+                </div>
               </div>
               <div
                 style={{
@@ -822,7 +724,7 @@ export const Checkout = () => {
                 <p>+91-{address.Number}</p>
               </div>
             </div>
-          </Div>
+          </div>
         )}
       </div>
 

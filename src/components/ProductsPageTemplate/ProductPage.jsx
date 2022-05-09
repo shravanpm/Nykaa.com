@@ -9,7 +9,7 @@ import { ProductCarousel } from "./ProductCarousel";
 import { Sidebar } from "./Sidebar";
 import { store } from '../../Redux/store';
 
-
+import Navbar from "../Navbar/navbar";
 
 export const ProductPage = (props) => {
   const [data, setData] = useState([]);
@@ -39,9 +39,10 @@ export const ProductPage = (props) => {
   }, [])
   return (
 
-
-    <div className="productPage">
-
+    <div style={{border:"1px solid white"}}>
+      <Navbar></Navbar>
+    <div className="productPage" style={{paddingTop:"7%"}}>
+      
       <div>
         <ProductCarousel data={carouselData} />
       </div>
@@ -72,7 +73,7 @@ export const ProductPage = (props) => {
 
     </div>
 
-
+    </div>
   )
 }
 

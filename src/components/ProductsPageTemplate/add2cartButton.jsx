@@ -20,7 +20,7 @@ export const Add2Cart = (prop)=>{
     }
 
     return (
-      <div className='buttonDiv'>
+      <div className='buttonDiv' style={{textAlign:"center"}}>
           
           <div className='productCardHeart' style={{width:"30%"}}>
                     <img className="buttonImg"
@@ -35,7 +35,7 @@ export const Add2Cart = (prop)=>{
                     handleChange(prop.data)
                   };
                     }} className = "cardButton">
-                        <span className='cardButtonSpan'>
+                        <span className='cardButtonSpan' >
                     <b>ADD TO BAG</b>
                         </span>
             </div>

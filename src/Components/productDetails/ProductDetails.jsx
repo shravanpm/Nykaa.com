@@ -23,7 +23,7 @@ export const ProductDetails = () => {
   const [valid, setValid] = useState(true);
   const details = useSelector((store) => store.productDetails);
   const bag1 = useSelector((store) => store.cartProducts)
-  console.log("bag1", bag1)
+  
   const dispatch = useDispatch();
   const dis = Math.round(((+details.mrp - +details.price) / +details.mrp) * 100);
   const rev = Math.floor(Math.random() * 100000);
@@ -82,11 +82,10 @@ export const ProductDetails = () => {
   };
 
   const addToBag = () => {
-    dispatch(bag());
     dispatch(addProduct(details))
   }
   return (
-    <div id="main">
+    <div id="main" style={{marginTop:"-20px"}}>
       <Navbar></Navbar>
       <div className="flex container1">
         <div id="imageDiv">

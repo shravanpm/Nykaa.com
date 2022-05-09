@@ -16,6 +16,7 @@ const Navbar = () => {
 
   const filter = createFilterOptions();
   const bag = useSelector((store) => store.bag);
+  const cartProducts=useSelector((store)=>store.cartProducts)
   useEffect(() => {
     const changeTitle = setInterval(() => {
       setOfferTitle((prev) => {
@@ -210,7 +211,7 @@ const Navbar = () => {
                     borderRadius: "50%",
                   }}
                 >
-                  {bag}
+                  {cartProducts.length}
                 </div>
                 <Link to={"/checkout"}>
                   <svg
